@@ -19,9 +19,12 @@ jobs:
 
     - name: Install Dependencies
       run: npm install
+
+    - name: Setup Ng
+      run: npm run ng 
       
     - name: Build Angular
-      run: npm run ng build --output-mode "static" --output-path "./build" --optimization
+      run: ng build --output-mode "static" --output-path "./build" --optimization
 
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v4.6.0
