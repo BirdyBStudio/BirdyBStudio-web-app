@@ -32,8 +32,8 @@ import { NgIf } from '@angular/common';
           transform: 'rotate(180deg)'
         })
       ),
-      transition('unflipped => flipped', [animate('0.15s')]),
-      transition('flipped => unflipped', [animate('0.15s')])
+      transition('unflipped => flipped', [animate('0.25s')]),
+      transition('flipped => unflipped', [animate('0.25s')])
     ]),
     trigger('mobileGames', [
       transition(':enter', [
@@ -42,19 +42,19 @@ import { NgIf } from '@angular/common';
             [style({height: '0%'}), animate('0.5s cubic-bezier(0.2, 0.0, 0, 1.0)', style({height: '*'}))],
           ),
           query('.mobile-game', 
-            [style({ transform: 'translateX(-300px)', opacity: '0' }), stagger('0.05s', animate('0.5s 0.05s cubic-bezier(0.2, 0.0, 0, 1.0)', style({ transform: 'translateX(0px)', opacity: '1' })))],
+            [style({ transform: 'translateX(-300px)', opacity: 0 }), stagger('0.05s', animate('0.5s 0.05s cubic-bezier(0.2, 0.0, 0, 1.0)', style({ transform: 'translateX(0px)', opacity: 1 })))],
           {optional: true}
           )
         ])
       ]),
       transition(':leave', [
         group([
+          query('.mobile-game',
+            [animate('0.2s cubic-bezier(0.3, 0.0, 0.8, 0.15)', style({transform: 'translateX(-300px)', opactiy: 0}))],
+            {optional: true}
+          ),
           query(':self',
             [animate('0.5s 0.2s cubic-bezier(0.2, 0.0, 0, 1.0)', style({height: '0px'}))]
-          ),
-          query('.mobile-game',
-            [animate('0.2s cubic-bezier(0.3, 0.0, 0.8, 0.15)', style({transform: 'translateX(-300px)', opactiy: '0'}))],
-            {optional: true}
           )
         ])
       ])
