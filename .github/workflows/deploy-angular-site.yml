@@ -31,12 +31,19 @@ jobs:
           
   deploy:
     needs: build
+    
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+      
     runs-on: ubuntu-latest
+    
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write
+    
     steps:
       - name: Deploy Angular Build
         uses: actions/deploy-pages@v4.0.5
         with:
-          name: github-pages
+          artifact_name: github-pages
