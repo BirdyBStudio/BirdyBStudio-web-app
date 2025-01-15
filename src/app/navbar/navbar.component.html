@@ -1,0 +1,39 @@
+<mat-toolbar>
+    <img src="logo.jpg" alt="Logo" class="logo" height="100%"/>
+    @if(desktopMenu) {
+        <div style="width: 30px;"></div>
+        <button mat-stroked-button [matMenuTriggerFor]="gameMenu" #menuTrigger="matMenuTrigger" class="nav_button">Games<mat-icon [@flip]="menuTrigger.menuOpen ? 'flipped' : 'unflipped'">arrow_drop_down</mat-icon></button>
+        <button mat-stroked-button routerLink="/about" class="nav_button">About</button>
+        <button mat-stroked-button routerLink="/contact" class="nav_button">Contact</button>
+
+        <mat-menu #gameMenu="matMenu">
+            <button mat-menu-item>Golf with Guns</button>
+            <button mat-menu-item>Multicrash!</button>
+            <button mat-menu-item>Project_C</button>
+        </mat-menu>
+    }
+    @else {
+        <div class="spacer"></div>
+        <button mat-icon-button (click)="openMobileNav()"><mat-icon>menu</mat-icon></button>
+        @if(mobileMenuOpen)
+        {
+            <div @mobileMenu class="overlay">
+                <button mat-icon-button class="closebtn" (click)="closeMobileNav()"><mat-icon>close</mat-icon></button>
+                <div class="mobile-button-container">
+                    <button mat-stroked-button (click)="toggleMobileGamesMenu()">Games<mat-icon [@flip]="mobileGamesMenuOpen ? 'flipped' : 'unflipped'" style="vertical-align: middle;">arrow_drop_down</mat-icon></button>
+                    @if(mobileGamesMenuOpen)
+                    {    
+                        <div @mobileGames class="mobile-game-container">
+                            <button mat-button class="mobile-game">Golf with Guns</button>
+                            <button mat-button class="mobile-game">Multicrash!</button>
+                            <button mat-button class="mobile-game">Project_C</button>
+                        </div>
+                    }
+                    <button mat-stroked-button>About</button>
+                    <button mat-stroked-button>Contact</button>
+                </div>
+            </div>
+        }
+        
+    }
+</mat-toolbar>
