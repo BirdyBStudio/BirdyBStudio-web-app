@@ -22,6 +22,12 @@ jobs:
 
     - name: Build Angular
       run: npm run build-github
+
+    - name: Upload Pages Artifact
+      uses: actions/upload-pages-artifact@v3.0.1
+      with:
+        name: github-pages
+        path: build/
           
   deploy:
     needs: build
@@ -38,7 +44,6 @@ jobs:
     
     steps:
       - name: Deploy Angular Build
-        uses: actions/upload-pages-artifact@v3.0.1
+        uses: actions/deploy-pages@v4.0.5
         with:
-          name: github-pages
-          path: build/
+          artifact_name: github-pages
