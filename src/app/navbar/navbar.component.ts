@@ -23,13 +23,13 @@ import { NgIf } from '@angular/common';
       state(
         'unflipped',
         style({
-          transform: 'rotate(0)'
+          transform: 'scale(1.5) rotate(0)'
         }),
       ),
       state(
         'flipped',
         style({
-          transform: 'rotate(180deg)'
+          transform: 'scale(1.5) rotate(180deg)'
         })
       ),
       transition('unflipped => flipped', [animate('0.25s')]),

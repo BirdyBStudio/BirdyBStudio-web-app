@@ -1,3 +1,5 @@
+@defer(on viewport)
+{
 <mat-toolbar>
     <img src="logo.jpg" alt="Logo" class="logo" height="100%"/>
     @if(desktopMenu) {
@@ -20,6 +22,7 @@
             <div @mobileMenu class="overlay">
                 <button mat-icon-button class="closebtn" (click)="closeMobileNav()"><mat-icon>close</mat-icon></button>
                 <div class="mobile-button-container">
+                    <button mat-stroked-button>Home<mat-icon style="vertical-align: middle;">home</mat-icon></button>
                     <button mat-stroked-button (click)="toggleMobileGamesMenu()">Games<mat-icon [@flip]="mobileGamesMenuOpen ? 'flipped' : 'unflipped'" style="vertical-align: middle;">arrow_drop_down</mat-icon></button>
                     @if(mobileGamesMenuOpen)
                     {    
@@ -37,3 +40,7 @@
         
     }
 </mat-toolbar>
+}
+@placeholder {
+    <p>Loading</p>
+}

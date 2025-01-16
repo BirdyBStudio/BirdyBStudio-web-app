@@ -66,6 +66,12 @@ mat-icon {
 .mobile-game-container button {
   width: 80%;
   display: block;
-  height: 50px;
-  
+  height: 50px; 
 }
+
+button mat-icon {
+  position: absolute;
+  left: 30%;
+  top: 30%;
+}
+
