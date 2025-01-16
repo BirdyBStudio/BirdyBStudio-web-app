@@ -50,7 +50,7 @@ import { NgIf } from '@angular/common';
       transition(':leave', [
         group([
           query('.mobile-game',
-            [animate('0.2s cubic-bezier(0.3, 0.0, 0.8, 0.15)', style({transform: 'translateX(-300px)', opactiy: 0}))],
+            [animate('0.2s cubic-bezier(0.3, 0.0, 0.8, 0.15)', style({transform: 'translateX(-200px)', opacity: 0}))],
             {optional: true}
           ),
           query(':self',
