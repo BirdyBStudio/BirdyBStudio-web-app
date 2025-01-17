@@ -1,10 +1,10 @@
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
-import { CarouselModule } from 'ngx-owl-carousel-o';
+import { CarouselComponent } from '../components/carousel/carousel.component';
 
 @Component({
   selector: 'app-home',
-  imports:[CarouselModule, NgFor],
+  imports:[CarouselComponent, NgFor],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })

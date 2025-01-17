@@ -6,11 +6,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatButtonModule } from "@angular/material/button"
 import { BreakpointObserver, LayoutModule } from "@angular/cdk/layout"
-import { HomeComponent } from '../home/home.component';
 import { trigger, state, style, transition, animate, query, stagger, group } from '@angular/animations';
-import { NgIf } from '@angular/common';
-
-
 
 @Component({
   selector: 'app-navbar',

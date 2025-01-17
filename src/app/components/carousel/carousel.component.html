@@ -1,0 +1,18 @@
+<div class="carousel-container">
+    
+    <div class="items-container">
+        @for(slide of slides; track $index)
+        {
+            @let idx = relativeIndex($index);
+            @if(idx >= -2 && idx <= 2)
+            {
+                <img [@carouselImage]="relativeIndex($index)" src="{{slide.src}}" alt="{{slide.title}}" class="carousel-img">
+                <!-- <h3 class="carousel-title">{{slide.title}}</h3>
+                <p class="carousel-subtitle">{{slide.subtitle}}</p> -->
+            }
+        }
+    </div>
+
+    <button (click)="decrementSlide()" class="left-arrow-button"><mat-icon class="left-arrow">arrow_left</mat-icon></button>
+    <button (click)="incrementSlide()" class="right-arrow-button"><mat-icon class="right-arrow">arrow_right</mat-icon></button>
+</div>

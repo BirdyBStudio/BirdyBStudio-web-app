@@ -1,13 +1,14 @@
-<div class="carousel-container">
-    <owl-carousel-o [options]="customOptions">
-      <ng-template carouselSlide *ngFor="let slide of slides">
-        <img [src]="slide.image" alt="{{ slide.title }}" />
-        <h2>{{ slide.title }}</h2>
-      </ng-template>
-    </owl-carousel-o>
-  </div>
-  <div class="content">
-    <h2>Our Works</h2>
-    <p>Edit this content easily to showcase your studio!</p>
-  </div>
-  
+<!-- <div class="carousel-container">
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide *ngFor="let slide of slides">
+      <img [src]="slide.image" alt="{{ slide.title }}" />
+      <h2>{{ slide.title }}</h2>
+    </ng-template>
+  </owl-carousel-o>
+</div> -->
+<app-carousel></app-carousel>
+<div class="content">
+  <p>{{-4%3}}</p>
+  <h2>Our Works</h2>
+  <p>Edit this content easily to showcase your studio!</p>
+</div>
