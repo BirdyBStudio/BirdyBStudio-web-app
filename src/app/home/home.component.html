@@ -6,9 +6,15 @@
     </ng-template>
   </owl-carousel-o>
 </div> -->
-<app-carousel></app-carousel>
+
+@if(desktopLayout) {
+  <app-carousel [slides]="desktopSlides"></app-carousel>
+}
+@else {
+  <app-carousel [slides]="mobileSlides"></app-carousel>
+}
+
 <div class="content">
-  <p>{{-4%3}}</p>
   <h2>Our Works</h2>
   <p>Edit this content easily to showcase your studio!</p>
 </div>

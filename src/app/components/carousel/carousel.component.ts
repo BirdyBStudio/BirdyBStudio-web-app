@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, input } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
 interface Slide {
@@ -27,7 +27,9 @@ interface Slide {
   ]
 })
 export class CarouselComponent {
-  slides: Array<Slide> = [
+  @Input() slides: Slide[] = [];
+  
+  tmp = [
     { src: 'slide1.jpg', title: 'Past Work 1', subtitle: 'nothing' },
     { src: 'slide2.png', title: 'Current Project', subtitle: 'nothing' },
     { src: 'slide3.jpg', title: 'Future Idea', subtitle: 'nothing' },
