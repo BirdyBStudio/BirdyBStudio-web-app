@@ -17,9 +17,9 @@ interface Slide {
     trigger('carouselImage',
       [
         state('-2', style({zIndex: 0, opacity: 1, transform: 'translate(-200%, -50%) scale(0)'})),
-        state('-1', style({zIndex: 1, opacity: 1, transform: 'translate(-80%, -50%) scale(0.8)'})),
+        state('-1', style({zIndex: 1, opacity: 1, transform: 'translate(-50%, -50%) scale(0.8)'})),
         state('0', style({zIndex: 2, opacity: 1, transform: 'translate(0%, -50%) scale(0.9)'})),
-        state('1', style({zIndex: 1, opacity: 1, transform: 'translate(80%, -50%) scale(0.8)'})),
+        state('1', style({zIndex: 1, opacity: 1, transform: 'translate(50%, -50%) scale(0.8)'})),
         state('2', style({zIndex: 0, opacity: 1, transform: 'translate(200%, -50%) scale(0)'})),
         transition('* <=> *', [animate('0.3s 	cubic-bezier(0.2, 0.0, 0, 1.0)')])
       ]
