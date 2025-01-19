@@ -6,7 +6,7 @@
             @let idx = relativeIndex($index);
             @if(idx >= -2 && idx <= 2)
             {
-                <div [@carouselImage]="relativeIndex($index)" class="carousel-img-container">
+                <div [@carouselImage]="{value: relativeIndex($index), params: {slideOffset: slideOffset}}" class="carousel-img-container">
                 <img src="{{slide.src}}" alt="{{slide.title}}" class="carousel-img">
                 </div>
                 <!-- <h3 class="carousel-title">{{slide.title}}</h3>

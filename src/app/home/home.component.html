@@ -8,10 +8,10 @@
 </div> -->
 
 @if(desktopLayout) {
-  <app-carousel [slides]="desktopSlides"></app-carousel>
+  <app-carousel [slides]="desktopSlides" [slideOffset]="80"></app-carousel>
 }
 @else {
-  <app-carousel [slides]="mobileSlides"></app-carousel>
+  <app-carousel [slides]="mobileSlides" [slideOffset]="50"></app-carousel>
 }
 
 <div class="content">
